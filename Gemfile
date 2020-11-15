@@ -61,3 +61,7 @@ gem "devise", "~> 4.7"
 gem "cancan", "~> 1.6"
 #Use rails admin for admin console
 gem 'rails_admin', '~> 2.0'
+#Use bootstrap for style and snippets
+gem 'bootstrap', '~> 5.0.0.alpha2'
+#Use j-query as bootstrap dependancy
+gem 'jquery-rails' 
