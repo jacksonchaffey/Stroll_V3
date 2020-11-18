@@ -9,25 +9,28 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
+      <%= f.input :name %>
     </div>
 
     <div class="field">
-      <%= f.label :surname %><br />
-      <%= f.text_field :surname %>
+      <%= f.input :surname %>
     </div>
+    
     <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+                hint: "Leave blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                hint: "Please enter current password to confirm changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <div class="field">
+    <%= f.label :Profile_Picture%>
+    <%= f.file_field :avatar%>
+    </div>
   </div>
 
   <div class="form-actions">

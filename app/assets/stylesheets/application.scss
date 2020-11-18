@@ -41,3 +41,43 @@
 .btn-primary {
     margin: 10px;
 }
+
+.form-inputs{
+    display: grid;
+    grid-row-gap: 25px;
+    align-items: center;
+}
+
+.simple_form {
+    div.input {
+      margin-bottom: 10px;
+      clear: both;
+      /* Required for Webkit, but not for Gecko */
+    }
+
+    label {
+      float: center;
+      width: 100px;
+      text-align: center;
+      margin: 2px 10px;
+    }
+    .error {
+      clear: left;
+      color: red;
+      display: block;
+      margin-left: 120px;
+    }
+    .hint {
+      clear: left;
+      margin-left: 120px;
+      color: grey;
+      display: block;
+      font-style: italic;
+    }
+  }
+  
+  .message-box{
+    display:flex;
+    justify-content: center;
+    
+  }

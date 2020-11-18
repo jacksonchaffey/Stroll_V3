@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :puppies
   has_many :walkers
-  
+  has_one_attached :avatar
 end

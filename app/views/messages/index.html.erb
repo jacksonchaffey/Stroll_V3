@@ -1,0 +1,23 @@
+<div id="messages">
+  <% @conversation.messages.each do |message| %>
+    <% if message.body %>
+      <div class="media">
+      
+        <div class="media-body">
+          <h6 class="media-heading"><%= message.user.name %> <small class="text-muted">Sent at: <%= message.created_at %></small></h5>
+          <p><%= message.body %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class ="message-box">
+<%= form_for [@conversation, @message] do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body, autofocus: true, placeholder: "Your message", class: "form-control", rows: 5 %>
+  </div>
+
+  <%= f.submit "Send", class: "btn btn-primary pull-right" %>
+<% end %>
+</div>

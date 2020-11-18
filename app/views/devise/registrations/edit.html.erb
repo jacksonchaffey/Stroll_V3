@@ -1,7 +1,9 @@
-<h2>Your Profile</h2>
+<h2><%= @user.name%>'s Profile</h2>
 
 <body>
-
+<%if @user.avatar.attached?%>
+  <img src="<%=(url_for(@user.avatar))%>">
+<%end%>
 <p>
   <button class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Edit your details</a>
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">List a puppy</button>
