@@ -18,6 +18,26 @@
  body{
      background-color:#101820 ;
      color: #EAE4E6;
+     text-align: center;
  }
 
- 
+
+ .card-buttons {
+    margin: 2px 0px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 10px;
+    text-align: center;
+    background-color: lightgrey;
+    color: #101820;
+}
+.btn-primary {
+    margin: 10px;
+}

@@ -64,4 +64,6 @@ gem 'rails_admin', '~> 2.0'
 #Use bootstrap for style and snippets
 gem 'bootstrap', '~> 5.0.0.alpha2'
 #Use j-query as bootstrap dependancy
-gem 'jquery-rails' 
+gem 'jquery-rails'
+#Use stripe for payments
+gem 'stripe'

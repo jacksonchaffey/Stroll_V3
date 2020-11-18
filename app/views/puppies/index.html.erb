@@ -1,0 +1,48 @@
+<head>
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+<p id="notice"><%= notice %></p>
+
+<h1>Puppies</h1>
+
+<section class="cards">
+<% @puppies.reverse.each do |puppy| %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= puppy.name %></h5>
+      <p class="card-text"><%= puppy.breed %></p>
+
+      <section class="card-buttons">
+      
+
+        <% if user_signed_in? && current_user.id == puppy.user_id %>
+          <%= link_to 'Edit', edit_puppy_path(puppy), class: "btn btn-light" %>
+          <%= link_to 'Delete', puppy, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <% end %>
+      </section>
+    </div>
+  </div>
+<% end %>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+<%= link_to 'New Puppy', new_puppy_path %>
+</body>
