@@ -1,24 +1,57 @@
 <head>
 <script src="https://js.stripe.com/v3/"></script>
+
+<script type="text/javascript">
+(function(d){ 
+var ss, js, id = 'booxi-js-api'; 
+if(d.getElementById(id)){return;} 
+js = d.createElement('script'); js.id = id; js.async = true; 
+js.src = 'https://www.booxi.com/api/bxe_core.js'; 
+d.getElementsByTagName('head')[0].appendChild(js); 
+ss = d.createElement('link'); ss.type = 'text/css'; ss.rel = 'stylesheet'; 
+ss.href = 'https://www.booxi.com/api/style.css'; 
+d.getElementsByTagName('head')[0].appendChild(ss);
+}(document));
+
+window.bxApiInit =  
+function() 
+{bxe_core.init({ 
+bxLang: 'eng', 
+bxExtWin: 'false', 
+});
+};
+</script>
+
+
 </head>
 
 <body>
 <p id="notice"><%= notice %></p>
 
-<h1>The clients.</h1>
-
+<h1>The clients.</h1> <br>
+<h4> All our puppies are rentable for 60 minutes at a time. A qualified Stroll professional will be with you for the hour. </h4><br><br>
 <section class="cards">
-<% @puppies.reverse.each do |puppy| %>
+<% @puppies.each do |puppy| %>
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title"><%= puppy.name %></h5>
       <p class="card-text"><%= puppy.breed %></p>
+      <p class="card-text"><%= puppy.age*12 %> months old</p>
+      <p class="card-text"><%= puppy.weight %>KG</p>
+
+      <p> <img src="<%=(url_for(puppy.dogphoto)) if puppy.dogphoto.attached?%>"></p>
+  
 
       <section class="card-buttons">
         <% if user_signed_in? && current_user.id == puppy.user_id %>
           <%= link_to 'Edit', edit_puppy_path(puppy), class: "btn btn-light" %>
           <%= link_to 'Delete', puppy, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <% else current_user.id != puppy.user_id%>
+         <div id="bx-viewport"></div>
+          <div class="bx_book_btn" data-lang="eng" data-key="p5r1224z114nE99jJe50Y6cY9W484x18"></div>
+          
         <% end %>
+    
       </section>
     </div>
   </div>
@@ -27,5 +60,5 @@
 
 <br>
 
-<%= link_to 'List a new dog.', new_puppy_path %>
+<%= link_to 'List a new client.', new_puppy_path %>
 </body>

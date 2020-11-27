@@ -43,9 +43,12 @@
 }
 
 .form-inputs{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-row-gap: 25px;
     align-items: center;
+    
+    
 }
 
 .simple_form {
@@ -54,7 +57,10 @@
       clear: both;
       /* Required for Webkit, but not for Gecko */
     }
-
+    div.file_field{
+      margin-bottom: 10px;
+      clear: both;
+    }
     label {
       float: center;
       width: 100px;
@@ -79,5 +85,5 @@
   .message-box{
     display:flex;
     justify-content: center;
-    
+  
   }

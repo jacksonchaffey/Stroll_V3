@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   before_action :user_params
   accepts_nested_attributes_for :user, update_only: true
 
+  
+
+
   # GET /users
   # GET /users.json
   def index

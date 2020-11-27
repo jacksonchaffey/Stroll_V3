@@ -1,0 +1,45 @@
+<h1>So you want to rent a puppy huh?</h1>
+
+
+<script type="text/javascript">
+(function(d){ 
+var ss, js, id = 'booxi-js-api'; 
+if(d.getElementById(id)){return;} 
+js = d.createElement('script'); js.id = id; js.async = true; 
+js.src = 'https://www.booxi.com/api/bxe_core.js'; 
+d.getElementsByTagName('head')[0].appendChild(js); 
+ss = d.createElement('link'); ss.type = 'text/css'; ss.rel = 'stylesheet'; 
+ss.href = 'https://www.booxi.com/api/style.css'; 
+d.getElementsByTagName('head')[0].appendChild(ss);
+}(document));
+
+window.bxApiInit =  
+function() 
+{bxe_core.init({ 
+bxLang: 'eng', 
+bxExtWin: 'false', 
+});
+};
+</script>
+
+<div id="bx-viewport"></div>
+<div class="bx_book_btn" data-lang="eng" data-key="p5r1224z114nE99jJe50Y6cY9W484x18"></div>
+
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: <%= pretty_amount(@amount) %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="<%=@description%>"
+          data-amount="<%= @amount %>"
+          data-locale="auto"></script>
+<% end %>

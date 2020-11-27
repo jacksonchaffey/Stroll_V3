@@ -67,3 +67,5 @@ gem 'bootstrap', '~> 5.0.0.alpha2'
 gem 'jquery-rails'
 #Use stripe for payments
 gem 'stripe'
+#Dotenv for keeping things a secret
+gem 'dotenv-rails', :groups => [:development, :test]

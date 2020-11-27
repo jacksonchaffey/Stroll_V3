@@ -5,9 +5,10 @@ class PuppiesController < ApplicationController
   # GET /puppies.json
   def index
     @puppies = Puppy.all
+    @user = User.all
   end
 
-  # GET /puppies/1
+  # GET /puppies/1  
   # GET /puppies/1.json
   def show
     @puppies = Puppy.where(id: params[:ids])
@@ -70,6 +71,6 @@ class PuppiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def puppy_params
-      params.require(:puppy).permit(:name,:breed,:weight,:age,:user_id)
+      params.require(:puppy).permit(:name,:breed,:weight,:age,:user_id, :dogphoto)
     end
 end
