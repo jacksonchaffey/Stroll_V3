@@ -1,4 +1,5 @@
 <div id="messages">
+<%# Show the messages that are related to the conversation being viewed in order of their sending. %>
   <% @conversation.messages.each do |message| %>
     <% if message.body %>
       <div class="media">
@@ -13,6 +14,7 @@
 </div>
 
 <div class ="message-box">
+<%# Space for user to write new message %>
 <%= form_for [@conversation, @message] do |f| %>
   <div class="form-group">
     <%= f.text_area :body, autofocus: true, placeholder: "Your message", class: "form-control", rows: 5 %>

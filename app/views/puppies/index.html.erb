@@ -31,6 +31,7 @@ bxExtWin: 'false',
 <h1>The clients.</h1> <br>
 <h4> All our puppies are rentable for 60 minutes at a time. A qualified Stroll professional will be with you for the hour. </h4><br><br>
 <section class="cards">
+<%# Display puppies in separate cards, include photo of dog if there is one attached. Include all dog details. %>
 <% @puppies.each do |puppy| %>
   <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -43,6 +44,7 @@ bxExtWin: 'false',
   
 
       <section class="card-buttons">
+      <%# Show user who owns the dog the path to delete or edit them, show all other users the booking function. %>
         <% if user_signed_in? && current_user.id == puppy.user_id %>
           <%= link_to 'Edit', edit_puppy_path(puppy), class: "btn btn-light" %>
           <%= link_to 'Delete', puppy, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
