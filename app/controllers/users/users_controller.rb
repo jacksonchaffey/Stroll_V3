@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :user_params
-  accepts_nested_attributes_for :user, update_only: true
 
   
 
